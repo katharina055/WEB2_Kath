@@ -1,0 +1,25 @@
+<html>
+    <head>
+        <title>WEB2</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <script  src=http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js></script>
+    </head>
+    <body>
+        
+        <div ng-app="myAppDepartment" ng-controller="myController">
+            <h1>{{name}}</h1>
+            <h2>{{country}}</h2>
+            <p> Employees: </p>
+            <ul>
+                <li ng-repeat="employee in employees">
+                    {{employee}}
+                </li>
+            </ul>
+            
+            
+        </div>
+        
+        <script src="Department.js"></script>
+    </body>
+</html>
