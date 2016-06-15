@@ -1,0 +1,47 @@
+<br>
+    
+ <h3 class="text-info">  Search </h3>    <input type="text" placeholder="Search Task" ng-model="taskfilter.task" />
+   <br><br>
+      
+    
+        
+
+
+<table>
+<p></p>
+<h3 class="text-info">Update</h3>
+<input ng-model="updateTaskName" ng-disabled="!taskSelected">
+<button class="btn btn-primary" ng-click="updateTask(taskSelected)">UpdateTask</button>
+<hr>
+      <table class="table" border="1px" style="width: 200px" ng-repeat="object in objects | filter:taskfilter">
+      <thead>
+      <tr>
+      <th>TaskName</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td>{{object.task}}</td>
+      <td><button class="btn btn-danger" ng-click="deleteTask(object)">Delete</button></td>
+      <td><button  class="btn btn-primary" ng-click="selectTask(object.task)">Update</button></td>
+          </tr> 
+           </tbody>
+      </table>
+<hr>
+<h3 class="text-info">Create</h3>
+ 	<input ng-model="object.task">
+      <button class="btn btn-primary" ng-click="addTask(object.task,'select1', 'select2',object.date)">AddTask</button>
+      </table>
+      <hr>
+      <br/><label class="text-info" for="singleSelect"> Employee </label>
+      <select id="select1" ng-model="object.employee">
+      <option value="employee" ng-repeat="object in objects">{{object.name}}
+      </option>
+      </select> 
+      <label class="text-info" for="singleSelect2"> Department </label>
+	<select id="select2" ng-model="object.department">
+      <option value="department" ng-repeat="object in objects">{{object.department}}
+      </option>
+      </select>
+      <hr>
+      

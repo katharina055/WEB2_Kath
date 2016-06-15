@@ -1,0 +1,44 @@
+<br>
+    <h3 class="text-info">Search</h3><input type="text" placeholder="Search Department" ng-model="depfilter.department" />
+   <br><br>
+      
+    
+        
+    
+  
+
+<table >
+
+<h3 class="text-info">Update</h3>
+<input  ng-model="updateDepartmentName" ng-disabled="!departmentSelected">
+<button  ng-click="updateDepartment(object.department)" class="btn btn-primary">UpdateDepartment</button>
+ 
+<hr>
+      <table class="table"  border="1px" style="width: 200px" ng-repeat="object in objects | filter:depfilter">
+      <thead>
+      <tr>
+      <th>DepartmentName</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+
+      <td>{{object.department}}</td>
+      <td><button class="btn btn-danger" ng-click="deleteDepartment(object)">Delete</button></td>
+      <td><button class="btn btn-primary" ng-click="selectDepartment(object.department)">Update</button></td>
+          </tr> 
+          </tbody>
+      </table>
+<hr>
+       <h3 class="text-info">Create</h3>
+      <input ng-model="object.department">
+      <button class="btn btn-primary" ng-click="addDepartment(object.department,'select1')">AddDepartment</button>
+      <hr>
+      <label class="text-info" for="singleSelect"> Select Employee </label><br>
+      <select id="select1" ng-model="object.employee">
+      <option value="employee" ng-repeat="object in objects">{{object.name}}
+
+      </option>
+      </select>   
+      <hr>
+     

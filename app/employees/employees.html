@@ -1,0 +1,46 @@
+<br>
+    
+   <h3 class="text-info">Search</h3>     <input  type="text" placeholder="Search Employee" ng-model="empfilter.name" />
+   <br><br>
+      
+    
+        
+
+
+
+
+<table>
+
+<h3  class="text-info">Update</h3>
+<input ng-model="updateEmployeeName" ng-disabled="!employeeSelected">
+<button  class="btn btn-primary" ng-click="updateEmployee(object.name)">UpdateEmployee</button>
+<hr>
+      <table class="table" border="1px" style="width: 200px" ng-repeat="object in objects | filter:empfilter">
+      <thead>
+      <tr>
+      <th>EmployeeName</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr>
+      <td>{{object.name}}</td>
+      <td><button class="btn btn-danger" ng-click="deleteEmployee(object)">Delete</button></td>
+      <td> <button class="btn btn-primary" ng-click="selectEmployee(object.name)">Update</button> </td>
+       </tr> 
+          </tbody>
+      </table>
+<hr>
+      <h3  class="text-info">Create</h3>
+      <input ng-model="object.name">
+      <button  class="btn btn-primary" ng-click="addEmployee(object.name,'select1')">AddEmployee</button>
+      <hr>
+      <label class="text-info" for="singleSelect"> Department: </label><br> 
+      <select id="select1" ng-model="object.department">
+      <option value="department" ng-repeat="object in objects">{{object.department}}
+      </option>
+      </select>   
+      <hr>
+      
+   
+      
+   
