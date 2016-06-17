@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <title>WEB2</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <script  src=http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js></script>
+    </head>
+    <body>
+         <h1>Task</h1>
+        <hr>
+        
+        <div ng-app="myAppTask" ng-controller="TaskController">
+           
+            
+            <ul type="none"  ng-repeat="task in Tasks">
+                <li >
+                    <strong>Task Number: {{task.number}}</strong>   
+                </li>
+                <li > &nbsp &nbsp{{task.name}}</li>
+                <li>&nbsp &nbsp Employee : {{task.employee}}</li>
+                <li>&nbsp &nbsp Duedate : {{task.duedate}}</li>
+               
+            </ul>
+            
+            
+        </div>
+        
+        <script src="Task.js"></script>
+    </body>
+</html>
