@@ -1,0 +1,44 @@
+<html>
+    <head>
+        <title>WEB2</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+         <script  src=http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js></script>
+    </head>
+    <body>
+         <h1>Employees</h1>
+        <hr>
+        
+        <div ng-app="myAppEmployee" ng-controller="EmployeeController">
+           
+            <div>
+                <a>Search for an employee:</a>
+      <input type="text" ng-model="filterValue"/>
+    </div>
+            
+            
+            <p>First Name: <input type ="text" ng-model="firstName"></p>
+            <p>Last Name: <input type ="text" ng-model="lastName"></p>
+            <p>Nationality: <input type="text" ng-model="nationality"></p>
+            
+            <button ng-click="addEmp(firstName, lastName, nationality)">Add Employee</button>
+            <ul type="none"  ng-repeat="employee in employees| filter: filterValue">
+                
+                <li ><strong>First Name:  {{$index +1 }}.{{employee.firstName}}</strong></li>
+                <li > Last Name: {{employee.lastName}}</li>
+                <li>Nationality: {{employee.nationality}}</li>
+                
+                <button ng-click="updateEmp(firstName, lastName, nationality, $index)">Update</button>
+                <button ng-click="removeEmp($index)">Remove</button>
+                
+               
+            </ul>
+            
+            <p>{{factory1}}</p>
+            
+          
+        </div>
+        
+        <script src="Employee.js"></script>
+    </body>
+</html>
